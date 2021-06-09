@@ -2,7 +2,7 @@ import fire
 from core import CopyTemplate
 
 
-def cli_wrapper():
+def cli_wrapper(template_str: str = "", target_str: str = "", no_exec=False, help=False):
     """cli_wrapper"""
     pass
 

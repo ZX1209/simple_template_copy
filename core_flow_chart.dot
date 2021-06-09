@@ -1,0 +1,41 @@
+digraph G {
+
+    node[shape="rect"]
+
+
+
+    start[shape="house"]
+    end[shape="house"]
+
+    has_tempalte_str[shape="diamond"]
+    has_target_str[shape="diamond"]
+    template_str_process
+    target_str_process
+    show_possible_temp
+    
+
+    target_str_valid[shape="diamond"]
+
+
+    start -> has_tempalte_str
+    has_tempalte_str -> end [label="no"]
+    has_tempalte_str -> template_str_process [label="yes"] 
+
+    template_str_process -> has_target_str [label="only one"]
+    template_str_process -> show_possible_temp [label="many"]
+    show_possible_temp -> end
+
+    has_target_str -> show_possible_temp [label="no"]
+    has_target_str -> target_str_process [label="yes"]
+
+    target_str_process -> target_str_valid
+
+    target_str_valid -> show_possible_temp [label="no"]
+    target_str_valid -> copy_process [label="yes"]
+
+    copy_process -> end
+
+
+
+
+}

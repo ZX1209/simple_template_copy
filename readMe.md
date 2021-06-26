@@ -12,11 +12,18 @@ python-Levenshtein
 ## todo
 - [ ] 基本流程构建
   - [x] docopt 构建
-  - [ ] template str 解析
-  - [ ] target str 解析
-  - [ ] template path,target path
-  - [ ] valid template path,valid template path
-  - [ ] 复制操作
+  - [x] template str 解析
+  - [x] target str 解析
+  - [x] template path,target path
+  - [x] valid template path,valid template path
+  - [x] 复制操作
+- [ ] 配置项(模板位置)
+  - [ ] 环境变量
+  - [ ] 配置文件??
+  - [ ] home dir (~/templates)
+  - [ ] 链接?
+  - [ ] 多模板文件夹?
+- [ ] 发布?
 - [ ] 优化
 - [ ] 解耦
   - [ ] 让方法更通用
@@ -27,3 +34,6 @@ python-Levenshtein
 - [ ] cmd template_str
   - [ ] only show possible template path
 - [ ] cmd template_str target_str
+- [ ] --loglevel debug
+- [ ] --test
+  - [ ] 不执行具体操作,

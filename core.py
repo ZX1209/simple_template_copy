@@ -45,8 +45,9 @@ class CopyTemplate:
         # this may not be good
 
         self.target_str_exists = False
+
         self.template_dir = "./test/templates/"  # just for test
-        self.template_dir_path = self.path_solve(self.template_dir)
+
         self.template_names = []
         self.template_name_path_map = dict()
         self.simple_matched = False
@@ -64,8 +65,18 @@ class CopyTemplate:
         # if help:
         #     self.help()
 
+    def load_config(self):
+        """load_config"""
+        # tag: load env config
+        osvar = os.getenv("tempy_templates_dir")
+
+        if osvar:
+            self.template_dir = osvar
+
     def pre_treatment(self):
         """pre_treatment"""
+        self.load_config()
+        self.template_dir_path = self.path_solve(self.template_dir)
 
         if self.template_str is None:
             self.template_str = ""

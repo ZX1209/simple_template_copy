@@ -18,17 +18,21 @@ python-Levenshtein
   - [x] valid template path,valid template path
   - [x] 复制操作
 - [ ] 配置项(模板位置)
-  - [ ] 环境变量
-  - [ ] 配置文件??
-  - [ ] home dir (~/templates)
-  - [ ] 链接?
-  - [ ] 多模板文件夹?
+  - [x] 环境变量
+    - [ ] tempy_templates_dir
+  - [x] 默认位置
+    - [ ] ~/tempy_templates_dir
+  - [x] 链接解析
+  - [x] 配置文件??,no
+  - [x] 链接?,no
+  - [x] 多模板文件夹?,no
 - [ ] 发布?
+  - [ ] 预设模板
 - [ ] 优化
 - [ ] 解耦
   - [ ] 让方法更通用
 
-## 基本用例
+### 基本用例
 - [ ] cmd 
   - [ ] 帮助信息
 - [ ] cmd template_str

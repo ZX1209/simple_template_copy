@@ -26,6 +26,9 @@ python-Levenshtein
   - [x] 配置文件??,no
   - [x] 链接?,no
   - [x] 多模板文件夹?,no
+- [x] debug 模式
+  - [ ] debug 标志
+  - [ ] log 级别
 - [ ] 发布?
   - [ ] 预设模板
 - [ ] 优化

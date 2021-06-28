@@ -4,6 +4,7 @@ from typing import Dict
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import shutil
+import logging
 
 
 def order_match(str1, str2):
@@ -26,10 +27,18 @@ def order_match(str1, str2):
 
 
 class CopyTemplate:
-    def __init__(self, template_str: str, target_str: str, no_exec=False, help=False):
+    def __init__(
+        self,
+        template_str: str,
+        target_str: str,
+        no_exec=False,
+        help=False,
+        log_level=logging.INFO,
+    ):
         """CopyTemplate"""
 
         # variable define
+        self.log_level = log_level
         self.template_str = template_str
         self.target_str = target_str
         self.template_path = None
@@ -55,15 +64,27 @@ class CopyTemplate:
 
         self.pre_treatment()
 
-        # self.pre_treatment()
-
-        # exec?
-
         self.info()
         self.main()
 
         # if help:
         #     self.help()
+
+    def log_config(self):
+        """log_config"""
+        self.ch = logging.StreamHandler()
+        self.ch.setLevel(self.log_level)
+
+        self.formatter = logging.Formatter(
+            "|%(asctime)s|%(name)s|%(levelname)s|\n%(message)s\n"
+        )
+
+        self.ch.setFormatter(self.formatter)
+
+        self.logger = logging.Logger("CopyTemplate")
+        self.logger.setLevel(logging.DEBUG)
+
+        self.logger.addHandler(self.ch)
 
     def load_config(self):
         """load_config"""
@@ -75,6 +96,7 @@ class CopyTemplate:
 
     def pre_treatment(self):
         """pre_treatment"""
+        self.log_config()
         self.load_config()
         self.template_dir_path = self.path_solve(self.template_dir)
 
@@ -110,7 +132,7 @@ class CopyTemplate:
 
     def info(self):
         """info"""
-        print(self.__dict__)
+        self.logger.debug("hello")
 
     def main(self):
         """main"""
@@ -185,5 +207,5 @@ class CopyTemplate:
             shutil.copy(str(self.template_path), str(self.target_path))
 
 
-if __name__ == "__main__":
-    t = CopyTemplate()
+# if __name__ == "__main__":
+#     t = CopyTemplate()

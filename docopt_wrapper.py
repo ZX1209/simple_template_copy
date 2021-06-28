@@ -16,7 +16,7 @@ Usage:
 Options:
     -h ,--help     Show this screen.
     -v,--version     Show version.
-    --loglevel=<level>  logging.log level[default: info]
+    --log_level=<level>  logging.log level[default: info]
     template_str    template describe str
     target_str     target name clare
 
@@ -56,8 +56,13 @@ if __name__ == "__main__":
 
     # set log level
     log_map = {"debug": log.DEBUG, "info": log.INFO, "warn": log.WARN}
-    log.basicConfig(level=log_map.get(arguments.get("--loglevel").lower()))
+    log_level = log_map.get(arguments.get("--log_level").lower())
+    log.basicConfig(level=log_level)
     # check arguments
     log.debug(arguments)
 
-    CopyTemplate(arguments.get("<template_str>"),arguments.get("<target_str>"))
+    CopyTemplate(
+        arguments.get("<template_str>"),
+        arguments.get("<target_str>"),
+        log_level=log_level,
+    )

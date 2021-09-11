@@ -17,6 +17,10 @@ python-Levenshtein
   - [x] template path,target path
   - [x] valid template path,valid template path
   - [x] 复制操作
+- [ ] 使用流程文件
+  - [ ] 安装
+  - [ ] 位置
+  - [ ] 使用
 - [ ] 配置项(模板位置)
   - [x] 环境变量
     - [ ] tempy_templates_dir
@@ -29,8 +33,12 @@ python-Levenshtein
 - [x] debug 模式
   - [ ] debug 标志
   - [ ] log 级别
+- [ ] 模板库
 - [ ] 发布?
   - [ ] 预设模板
+  - [x] pyproject ,先不用管
+  - [x] setup.py ,主要
+    - [ ] 编写安装配置文件
 - [ ] 优化
 - [ ] 解耦
   - [ ] 让方法更通用
@@ -41,6 +49,14 @@ python-Levenshtein
 - [ ] cmd template_str
   - [ ] only show possible template path
 - [ ] cmd template_str target_str
-- [ ] --loglevel debug
+- [ ] --log_level=debug
 - [ ] --test
   - [ ] 不执行具体操作,
+
+## 文件说明
+* core.py
+  * 程序主要运行代码
+* docopt_wrapper.py 
+  * 使用 docopt 解析,传递参数
+* fire_cli
+  * 

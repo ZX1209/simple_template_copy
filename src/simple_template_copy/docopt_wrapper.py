@@ -4,7 +4,7 @@ from docopt import docopt
 import logging as log
 import shutil
 import sys
-from core import CopyTemplate
+from .core import CopyTemplate
 
 doc = """simple template copy by python
 
@@ -51,7 +51,8 @@ def copy_from_template(src, dst):
         shutil.copy(src, dst)
 
 
-if __name__ == "__main__":
+def main():
+    """main"""
     arguments = docopt(doc, version="Copy Template 0.3")
 
     # set log level
@@ -66,3 +67,7 @@ if __name__ == "__main__":
         arguments.get("<target_str>"),
         log_level=log_level,
     )
+
+
+# if __name__ == "__main__":
+#     main()

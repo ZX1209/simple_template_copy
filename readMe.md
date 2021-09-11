@@ -59,4 +59,12 @@ python-Levenshtein
 * docopt_wrapper.py 
   * 使用 docopt 解析,传递参数
 * fire_cli
-  * 
+
+
+## 开发流程
+文件结构
+setup.py
+pip install,upgrade
+
+
+

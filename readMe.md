@@ -70,3 +70,6 @@ pip install,upgrade
 
 
 
+## 文件结构
+引用脚本放在包外面,
+进入点用scripts

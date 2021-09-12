@@ -29,7 +29,7 @@ setup(
     # There are some restrictions on what makes a valid project name
     # specification here:
     # https://packaging.python.org/specifications/core-metadata/#name
-    name="SimpleTemplateCopy",  # Required
+    name="stc",  # Required
     # Versions should comply with PEP 440:
     # https://www.python.org/dev/peps/pep-0440/
     #
@@ -158,12 +158,12 @@ setup(
     #
     # For example, the following would provide a command called `sample` which
     # executes the function `main` from this package when invoked:
-    entry_points={  # Optional
-        "console_scripts": [
-            "simple_template_copy=simple_template_copy.docopt_w:main",
-        ],
-    },
-    # scripts=["src/docopt_wrapper.py", "tempy"],
+    # entry_points={  # Optional
+    #     "console_scripts": [
+    #         "simple_template_copy=tempy:main",
+    #     ],
+    # },
+    scripts=["bin/tempy"],
     # List additional URLs that are relevant to your project as a dict.
     #
     # This field corresponds to the "Project-URL" metadata fields:

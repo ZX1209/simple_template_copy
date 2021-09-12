@@ -1,10 +1,13 @@
+#! /usr/bin/env python3
+# coding: utf-8
+
 import os
 from pathlib import Path
 from docopt import docopt
 import logging as log
 import shutil
 import sys
-from . import core  # relative import just in package
+from simple_template_copy import core  # need install simple_template_copy
 
 doc = """simple template copy by python
 
@@ -50,3 +53,7 @@ def main():
         arguments.get("<target_str>"),
         log_level=log_level,
     )
+
+
+if __name__ == "__main__":
+    main()

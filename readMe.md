@@ -34,8 +34,10 @@ python-Levenshtein
   - [ ] debug 标志
   - [ ] log 级别
 - [ ] 模板库
+  - [ ] 只说明位置
 - [ ] 发布?
   - [ ] 预设模板
+  - [ ] 调整模板文件夹位置
   - [x] pyproject ,先不用管
   - [x] setup.py ,主要
     - [ ] 编写安装配置文件

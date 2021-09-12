@@ -160,10 +160,10 @@ setup(
     # executes the function `main` from this package when invoked:
     entry_points={  # Optional
         "console_scripts": [
-            "simple_template_copy=simple_template_copy.docopt_wrapper:main",
+            "simple_template_copy=simple_template_copy:main",
         ],
     },
-    # scripts=["bin/docopt_wrapper.py"],
+    # scripts=["src/docopt_wrapper.py", "tempy"],
     # List additional URLs that are relevant to your project as a dict.
     #
     # This field corresponds to the "Project-URL" metadata fields:

@@ -55,7 +55,8 @@ class CopyTemplate:
 
         self.target_str_exists = False
 
-        self.template_dir = "./test/templates/"  # just for test
+        # tag: template_dir
+        self.template_dir = "~/tempy_templates_dir"  # default path
 
         self.template_names = []
         self.template_name_path_map = dict()
@@ -98,7 +99,10 @@ class CopyTemplate:
         """pre_treatment"""
         self.log_config()
         self.load_config()
+
         self.template_dir_path = self.path_solve(self.template_dir)
+        if not self.template_dir_path.exists():
+            self.template_dir_path.mkdir()
 
         if self.template_str is None:
             self.template_str = ""
@@ -169,7 +173,7 @@ class CopyTemplate:
 
     def data_prepare(self):
         """data_prepare"""
-        for path in self.template_dir_path.iterdir():
+        for path in self.template_dir_path.iterdir():  # tag: bug?
             self.template_names.append(path.name)
             self.template_name_path_map[path.name] = path
 

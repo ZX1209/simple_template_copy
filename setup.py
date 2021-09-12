@@ -160,7 +160,7 @@ setup(
     # executes the function `main` from this package when invoked:
     entry_points={  # Optional
         "console_scripts": [
-            "simple_template_copy=simple_template_copy:main",
+            "simple_template_copy=simple_template_copy.docopt_w:main",
         ],
     },
     # scripts=["src/docopt_wrapper.py", "tempy"],

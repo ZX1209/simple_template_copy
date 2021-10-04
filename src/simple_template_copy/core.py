@@ -143,6 +143,8 @@ class CopyTemplate:
     def main(self):
         """main"""
         if self.has_template_str:
+            self.print_possible_templates()
+            self.print_simple_match()
 
             #
             if self.has_target_str and (
@@ -150,9 +152,9 @@ class CopyTemplate:
             ):
 
                 self.copy_template()
-            else:
-                # only show possible template path
-                self.print_possible_templates()
+            # else:
+            #     # only show possible template path
+            #     self.print_possible_templates()
         else:
             print("show help messages")
 
@@ -200,16 +202,30 @@ class CopyTemplate:
 
     def print_possible_templates(self):
         """print_possible_templates"""
-        print("too much possible templates below")
+        print(f"find {len(self.possible_templates)} possible templates below")
         for template in self.possible_templates:
             print(template[0], " : ")
             print("    ", template[1])
+        print()
+
+    def print_simple_match(self):
+        """print_possible_templates"""
+        if self.simple_matched:
+            print("simple matched")
+            print(self.template_str, " : ")
+            print("    ", self.template_path)
+        else:
+            print("no simple matched")
+
+        print()
 
     def copy_template(self):
         """copy_template"""
         if self.template_path.is_dir():
             for target_path in self.target_paths:
-                shutil.copytree(str(self.template_path), str(target_path))
+                shutil.copytree(
+                    str(self.template_path), str(target_path), dirs_exist_ok=True
+                )
         elif self.template_path.is_file():
             for target_path in self.target_paths:
                 shutil.copy(str(self.template_path), str(target_path))

@@ -11,9 +11,8 @@ python-Levenshtein
 ## doing
 注意git存档
 
-多文件创建
-## todo
 覆盖提醒
+## todo
 ./ 支持
 
 
@@ -58,6 +57,9 @@ python-Levenshtein
   - [ ] 让方法更通用
 
 ## done
+多文件创建
+匹配算法改进(改进了下simple match的提示)
+
 
 ### 基本用例
 - [ ] cmd 

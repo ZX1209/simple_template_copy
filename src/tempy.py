@@ -14,7 +14,7 @@ doc = """simple template copy by python
 Usage:
     cmd.py [options]
     cmd.py <template_str>  [options]
-    cmd.py <template_str> <target_str> [options]
+    cmd.py <template_str> <target_strs>... [options]
 
 Options:
     -h ,--help     Show this screen.
@@ -50,7 +50,7 @@ def main():
 
     core.CopyTemplate(
         arguments.get("<template_str>"),
-        arguments.get("<target_str>"),
+        arguments.get("<target_strs>"),
         log_level=log_level,
     )
 

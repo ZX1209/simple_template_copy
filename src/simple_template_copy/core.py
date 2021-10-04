@@ -1,6 +1,6 @@
 from pathlib import Path
 import os
-from typing import Dict
+from typing import Dict, List
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import shutil
@@ -30,19 +30,20 @@ class CopyTemplate:
     def __init__(
         self,
         template_str: str,
-        target_str: str,
+        target_strs: List[str],
         no_exec=False,
         help=False,
         log_level=logging.INFO,
     ):
         """CopyTemplate"""
+        print("here")
 
         # variable define
         self.log_level = log_level
         self.template_str = template_str
-        self.target_str = target_str
+        self.target_strs = target_strs
         self.template_path = None
-        self.target_path = None
+        self.target_paths = None
 
         self.feedback_messages = []
 
@@ -108,12 +109,13 @@ class CopyTemplate:
             self.template_str = ""
             self.has_template_str = False
 
-        if self.target_str is None:
-            self.target_str = ""
+        # check variable type?
+        if self.target_strs is None:
+            self.target_str = []
             self.has_target_str = False
 
         self.template_str.strip()
-        self.target_str.strip()
+        self.target_strs = list(map(str.strip, self.target_strs))
 
         if self.has_template_str and self.path_solve(self.template_str).exists():
             self.is_path_ts = True
@@ -132,7 +134,7 @@ class CopyTemplate:
 
         # target str process
         if self.has_target_str:
-            self.target_path = self.path_solve(self.target_str)
+            self.target_paths = list(map(self.path_solve, self.target_strs))
 
     def info(self):
         """info"""
@@ -206,9 +208,11 @@ class CopyTemplate:
     def copy_template(self):
         """copy_template"""
         if self.template_path.is_dir():
-            shutil.copytree(str(self.template_path), str(self.target_path))
+            for target_path in self.target_paths:
+                shutil.copytree(str(self.template_path), str(target_path))
         elif self.template_path.is_file():
-            shutil.copy(str(self.template_path), str(self.target_path))
+            for target_path in self.target_paths:
+                shutil.copy(str(self.template_path), str(target_path))
 
 
 # if __name__ == "__main__":

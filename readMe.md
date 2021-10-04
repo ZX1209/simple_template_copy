@@ -11,9 +11,10 @@ python-Levenshtein
 ## doing
 注意git存档
 
-覆盖提醒
+覆盖提醒,these file will change
 ## todo
-./ 支持
+
+定制复制操作?覆盖问题
 
 
 - [ ] 基本流程构建
@@ -57,6 +58,7 @@ python-Levenshtein
   - [ ] 让方法更通用
 
 ## done
+./ 支持 (copy tree,dirs_exist_ok=True)
 多文件创建
 匹配算法改进(改进了下simple match的提示)
 

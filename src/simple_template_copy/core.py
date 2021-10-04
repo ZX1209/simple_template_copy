@@ -230,6 +230,10 @@ class CopyTemplate:
             for target_path in self.target_paths:
                 shutil.copy(str(self.template_path), str(target_path))
 
+    def custom_copy(self, argvs):
+        """custom_copy"""
+        pass
+
 
 # if __name__ == "__main__":
 #     t = CopyTemplate()

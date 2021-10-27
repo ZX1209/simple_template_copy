@@ -29,6 +29,8 @@ Docs:
     cmd.py <template_str> : search template by template_str
     cmd.py <template_str> <target_str> : complate copy
 
+Attention:
+    attention to file cover
 """
 test_cmd = """
 
@@ -44,6 +46,7 @@ def main():
     # set log level
     log_map = {"debug": log.DEBUG, "info": log.INFO, "warn": log.WARN}
     log_level = log_map.get(arguments.get("--log_level").lower())
+
     log.basicConfig(level=log_level)
     # check arguments
     log.debug(arguments)
@@ -52,6 +55,7 @@ def main():
         arguments.get("<template_str>"),
         arguments.get("<target_strs>"),
         log_level=log_level,
+        help_message=doc,
     )
 
 

@@ -32,11 +32,11 @@ class CopyTemplate:
         template_str: str,
         target_strs: List[str],
         no_exec=False,
-        help=False,
+        help_message="",
         log_level=logging.INFO,
     ):
         """CopyTemplate"""
-        print("here")
+        # print("here")
 
         # variable define
         self.log_level = log_level
@@ -44,6 +44,7 @@ class CopyTemplate:
         self.target_strs = target_strs
         self.template_path = None
         self.target_paths = None
+        self.help_message = help_message
 
         self.feedback_messages = []
 
@@ -68,6 +69,7 @@ class CopyTemplate:
 
         self.info()
         self.main()
+        self.summary()
 
         # if help:
         #     self.help()
@@ -110,7 +112,7 @@ class CopyTemplate:
             self.has_template_str = False
 
         # check variable type?
-        if self.target_strs is None:
+        if self.target_strs is None or self.target_strs == []:
             self.target_str = []
             self.has_target_str = False
 
@@ -143,8 +145,8 @@ class CopyTemplate:
     def main(self):
         """main"""
         if self.has_template_str:
-            self.print_possible_templates()
-            self.print_simple_match()
+            # self.print_possible_templates()
+            # self.print_simple_match()
 
             #
             if self.has_target_str and (
@@ -156,7 +158,7 @@ class CopyTemplate:
             #     # only show possible template path
             #     self.print_possible_templates()
         else:
-            print("show help messages")
+            print(self.help_message)
 
         return
         # self.feedback_messages.append("help message")
@@ -229,6 +231,22 @@ class CopyTemplate:
         elif self.template_path.is_file():
             for target_path in self.target_paths:
                 shutil.copy(str(self.template_path), str(target_path))
+
+    def summary(self):
+        """summary"""
+        lastline = ""
+        if self.has_template_str:
+            lastline += "get template str, "
+            if self.simple_matched:
+                lastline += "simple matched, "
+
+            if self.has_target_str and (
+                self.simple_matched or self.possible_matched or self.is_path_ts
+            ):
+                lastline += "file copyed, "
+        else:
+            lastline += "no input get,show help message on top"
+        print(lastline)
 
     def custom_copy(self, argvs):
         """custom_copy"""

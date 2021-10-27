@@ -26,8 +26,8 @@ tempy
 
 
 ## doing
-注意git存档
-文档更新
+* 执行提示
+
 
 ## todo
 帮助文本显示?
@@ -46,12 +46,16 @@ filecmp
 发布
 使用例子
 
+注意git存档
+文档更新
 
 
 ## done
 ./ 支持 (copy tree,dirs_exist_ok=True)
 多文件创建
 匹配算法改进(改进了下simple match的提示)
+* 执行总结
+
 
 - [ ] 基本流程构建
   - [x] docopt 构建

@@ -69,7 +69,7 @@ class CopyTemplate:
 
         self.info()
         self.main()
-        self.summary()
+        self.lastline_summary()
 
         # if help:
         #     self.help()
@@ -145,8 +145,8 @@ class CopyTemplate:
     def main(self):
         """main"""
         if self.has_template_str:
-            # self.print_possible_templates()
-            # self.print_simple_match()
+            self.print_possible_templates()
+            self.print_simple_match()
 
             #
             if self.has_target_str and (
@@ -154,6 +154,8 @@ class CopyTemplate:
             ):
 
                 self.copy_template()
+
+                self.print_copy_info()
             # else:
             #     # only show possible template path
             #     self.print_possible_templates()
@@ -232,8 +234,15 @@ class CopyTemplate:
             for target_path in self.target_paths:
                 shutil.copy(str(self.template_path), str(target_path))
 
-    def summary(self):
-        """summary"""
+    def print_copy_info(self):
+        """print_copy_info"""
+        print("copy " + str(self.template_path))
+        print("to")
+        print(" , ".join(self.target_strs))
+        print()
+
+    def lastline_summary(self):
+        """lastline_summary"""
         lastline = ""
         if self.has_template_str:
             lastline += "get template str, "

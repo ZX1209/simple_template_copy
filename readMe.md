@@ -26,7 +26,7 @@ tempy
 
 
 ## doing
-* 执行提示
+
 
 
 ## todo
@@ -55,7 +55,9 @@ filecmp
 多文件创建
 匹配算法改进(改进了下simple match的提示)
 * 执行总结
-
+* 执行提示
+  * match
+  * copy info
 
 - [ ] 基本流程构建
   - [x] docopt 构建

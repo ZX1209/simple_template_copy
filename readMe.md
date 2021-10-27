@@ -1,21 +1,57 @@
-## 使用类重构
 
-## 配置文件问题?
-简单先测试下功能
+## 安装配置
 
-可以直接指定文件啊,,简单的复制也是可以的
+### pypi
 
-## 依赖
-fuzzywuzzy
-python-Levenshtein
+### 本地安装
+cd simple_template_copy
+pip install ./
+
+### dev 模式?
+> https://setuptools.pypa.io/en/latest/userguide/quickstart.html
+pip install --editable .
+
+### 模板位置指定
+
+- [x] 环境变量
+  - [x] tempy_templates_dir
+- [x] 默认位置
+  - [x] ~/tempy_templates_dir
+
+
+## 使用 
+tempy
+
+
+
+
 ## doing
 注意git存档
+文档更新
 
-覆盖提醒,these file will change
 ## todo
+帮助文本显示?
+使用类重构?
 
+配置文件问题?
+
+依赖?
+  fuzzywuzzy
+  python-Levenshtein
+
+filecmp
 定制复制操作?覆盖问题
+覆盖提醒,these file will change
 
+发布
+使用例子
+
+
+
+## done
+./ 支持 (copy tree,dirs_exist_ok=True)
+多文件创建
+匹配算法改进(改进了下simple match的提示)
 
 - [ ] 基本流程构建
   - [x] docopt 构建
@@ -56,12 +92,6 @@ python-Levenshtein
 - [ ] 优化
 - [ ] 解耦
   - [ ] 让方法更通用
-
-## done
-./ 支持 (copy tree,dirs_exist_ok=True)
-多文件创建
-匹配算法改进(改进了下simple match的提示)
-
 
 ### 基本用例
 - [ ] cmd 

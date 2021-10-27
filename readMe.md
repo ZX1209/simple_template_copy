@@ -30,7 +30,11 @@ tempy
 
 
 ## todo
-帮助文本显示?
+* 覆盖提示?
+* 发布?
+
+
+
 使用类重构?
 
 配置文件问题?
@@ -51,6 +55,8 @@ filecmp
 
 
 ## done
+* 帮助文本显示?
+
 ./ 支持 (copy tree,dirs_exist_ok=True)
 多文件创建
 匹配算法改进(改进了下simple match的提示)

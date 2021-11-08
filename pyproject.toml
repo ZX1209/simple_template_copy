@@ -10,7 +10,7 @@ build-backend = "setuptools.build_meta"
 authors = [{name = "gl", email = "1404919041@qq.com"}]
 classifiers = ["License :: OSI Approved :: MIT License"]
 dynamic = ["version", "description"]
-name = "tempy"
+name = "templatepy"
 readme = "readMe.md"
 
 [project.urls]
